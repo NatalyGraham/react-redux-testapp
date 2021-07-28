@@ -1,15 +1,14 @@
 import * as React from "react";
 import SelectDropBox from "./components/Buttons/SelectDropBox.js";
+import ResultText from "./components/TextAreas/ResultText.js";
 
-import './App.css';
-
-
-const AccuracyBtn = SelectDropBox("Acc")
+import "./App.css";
 
 function App() {
   return (
-    <div>
-      <AccuracyBtn />
+    <div className="centred">
+      <SelectDropBox />
+      <ResultText />
     </div>
   );
 }
