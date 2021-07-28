@@ -5,28 +5,44 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 
-export default function SelectDropBoxs() {
-  const [accuracyLevel, setAccLvl] = React.useState(1);
-
+const SelectDropBox = (props) => {
+  
   const handleChange = (event) => {
-    setAccLvl(event.target.value);
+    props.setAccuracy(event.target.value)
   };
 
+  const menuItemValues = [
+    {
+      code: 1,
+      name: props.item1,
+    },
+    {
+      code: 2,
+      name: props.item2,
+    },
+  ];
+
   return (
-    <Box sx={{ minWidth: 120 , maxWidth: 250}}>
+    <Box sx={{ minWidth: 120, maxWidth: 250 }}>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Accuracy</InputLabel>
+        <InputLabel id="demo-simple-select-label">{props.boxName}</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={accuracyLevel}
+          value={props.accuracy}
           label="Accuracy"
+          name="demo-simple-select-label"
           onChange={handleChange}
         >
-          <MenuItem value={1}>Normal</MenuItem>
-          <MenuItem value={2}>High</MenuItem>          
+          {menuItemValues.map(({ code, name }) => (
+            <MenuItem value={code} key={code}>
+              {name}
+            </MenuItem>
+          ))}
         </Select>
       </FormControl>
     </Box>
   );
-}
+};
+
+export default SelectDropBox;
