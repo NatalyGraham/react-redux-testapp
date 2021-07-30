@@ -6,29 +6,24 @@ import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 
 const RowRadioButtonsGroup = (props) => {
-  const visibility125 = props.accuracy === 2;
-    
+  
+   const visibility125 = (props.accuracy === "AnyLvl" || props.accuracy === "NormalLvl");
+   const visibility150 = (props.accuracy === "AnyLvl" || props.accuracy === "HighLvl");
+   const visibility175 =  props.accuracy === "HighLvl";
 
-  function isDisable(visibility) {
-    if (visibility) {
-      return false;
-    } else {
-      return true;
-    }
-  }
-
+ 
   const temperatureData = [
     {
       tempValue: "125",
-      tempVisibility: visibility125,
+      tempVisibility: !visibility125,
     },
     {
       tempValue: "150",
-      tempVisibility: !visibility125,
+      tempVisibility: !visibility150,
     },
     {
       tempValue: "175",
-      tempVisibility: !visibility125,
+      tempVisibility: !visibility175,
     },
   ];
 

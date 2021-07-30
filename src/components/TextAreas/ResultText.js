@@ -14,6 +14,17 @@ const ResultText = (props) => {
     },
   ];
 
+  const typeOfStatus = [
+    {
+      type: "NormalLvl",
+      text: " normal ",
+    },
+    {
+      type: "HigiLvl",
+      text: " high ",
+    },
+  ];
+
   const textByType = (type) => {
     switch (type) {
       case "accuracy":
@@ -23,10 +34,22 @@ const ResultText = (props) => {
     }
   };
 
+  const textByStatus = (type) => {
+    switch (type) {
+      case "NormalLvl":
+        return " normal ";
+      case "HighLvl":
+        return " high ";
+      case "AnyLvl":
+        return " any ";
+    }
+  };
+
   return (
     <div>
       <p className="textArea">
-        You chose <span className="redText"> state </span>
+        You chose{" "}
+        <span className="redText">{textByStatus(props.accuracy)}</span>
         {textByType(props.type)}
       </p>
     </div>

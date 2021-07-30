@@ -8,17 +8,21 @@ import Select from "@material-ui/core/Select";
 const SelectDropBox = (props) => {
   
   const handleChange = (event) => {
-    props.setAccuracy(event.target.value)
+    props.setAccuracy(event.target.value)    
   };
 
   const menuItemValues = [
     {
-      code: 1,
-      name: props.item1,
+      code: "NormalLvl",
+      name: props.item[0],
     },
     {
-      code: 2,
-      name: props.item2,
+      code: "HighLvl",
+      name: props.item[1],
+    },
+    {
+      code: "AnyLvl",
+      name: props.item[2],
     },
   ];
 
