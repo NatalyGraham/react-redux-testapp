@@ -1,3 +1,10 @@
+
+.component_wrapper{
+    margin: 5px 5px 5px 5px;    
+    display: flex;
+    flex-direction: column;
+}
+
 .centred{
     margin: 60px 0px 0px 100px;
     display: flex;

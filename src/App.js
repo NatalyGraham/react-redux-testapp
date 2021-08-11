@@ -1,27 +1,16 @@
-import * as React from "react";
-import SelectDropBox from "./components/Buttons/SelectDropBox.js";
-import ResultText from "./components/TextAreas/ResultText.js";
+import React, { Component } from "react";
 
+import Header from "./components/Header/Header"
 import "./App.css";
-import RowRadioButtonsGroup from "./components/Buttons/RowRadioButtonsGroup.js";
 
-const App = () => {
- const [accuracyLevel, setAccLvl] = React.useState(""); 
-  console.log(accuracyLevel);
+export default class App extends Component {
+  render() {
+    //const {accuracyLevel, setAccLvl} = this.props;
 
-  return (
-    <div className="centred" >
-      <SelectDropBox
-        accuracy={accuracyLevel}
-        boxName="Accuracy"
-        item={["Normal","High","Any"]}
-        setAccuracy={setAccLvl}
-      />
-      <ResultText type="accuracy" accuracy={accuracyLevel}/>
-      <RowRadioButtonsGroup accuracy={accuracyLevel} />
-      <ResultText type="temperature" />
-    </div>
-  );
-};
-
-export default App;
+    return (
+      <div className="component_wrapper">
+        <Header />
+      </div>
+    );
+  }
+}
