@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import BackButton from "../Buttons/Button"
-import LanguageSelector from "./LanguageSelector";
+//import LanguageSelector from "./LanguageSelector";
 
 export default class Header extends Component {
   render() {
@@ -9,7 +9,7 @@ export default class Header extends Component {
           <div>
 
           <BackButton />
-          <LanguageSelector />
+          {/*<LanguageSelector />*/}
           </div>
       );
   }
