@@ -1,14 +1,17 @@
 
 .component_wrapper{
-    margin: 5px 5px 5px 5px;    
+    margin: 5px 5px 50px 5px;    
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+}
+
+.page_content{
+    margin-top: 50px;
+    width: 100%;
 }
 
 .centred{
-    margin: 60px 0px 0px 100px;
-    display: flex;
-    flex-direction: column;
+    justify-self: unset;
 }
 
 .textArea{
